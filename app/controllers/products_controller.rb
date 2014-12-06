@@ -12,6 +12,13 @@ class ProductsController < ApplicationController
   def show
   end
 
+  def who_bought
+    @product = Product.find(params[:id])
+    respond_to do |format|
+      format.atom
+    end
+  end
+
   # GET /products/new
   def new
     @product = Product.new
